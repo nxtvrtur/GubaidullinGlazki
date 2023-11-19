@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Linq;
+
 namespace GubaidullinGlazki
 {
     using System;
@@ -34,6 +36,18 @@ namespace GubaidullinGlazki
         public string DirectorName { get; set; }
         public string INN { get; set; }
         public string KPP { get; set; }
+        public int ProductCount => GetAllProducts();
+        public int GetAllProducts()
+        {
+            var count = 0;
+            var context = Gubaidullin_GlazkiEntities.GetContext().ProductSale.Where(p => p.AgentID == ID).ToList();
+            foreach (var productSale in context)
+            {
+                count += productSale.ProductCount;
+            }
+
+            return count;
+        } 
     
         public virtual AgentType AgentType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

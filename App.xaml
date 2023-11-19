@@ -11,6 +11,8 @@
             <Setter Property="Background" Value="#B175EE"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="FontFamily" Value=" Century Gothic"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
         </Style>
     </Application.Resources>
 </Application>
