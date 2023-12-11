@@ -295,7 +295,7 @@
     <End Role="Material" Type="Self.Material" Multiplicity="*" />
     <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Gubaidullin_GlazkiEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Agent" EntityType="Self.Agent" />
     <EntitySet Name="AgentPriorityHistory" EntityType="Self.AgentPriorityHistory" />
     <EntitySet Name="AgentType" EntityType="Self.AgentType" />

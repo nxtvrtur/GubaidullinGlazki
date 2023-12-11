@@ -160,5 +160,10 @@ namespace GubaidullinGlazki
                 }
             }
         }
+
+        private void OpenSalesButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new SalesPage(_currentAgent));
+        }
     }
 }

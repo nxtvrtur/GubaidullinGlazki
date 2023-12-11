@@ -11,7 +11,8 @@ namespace GubaidullinGlazki
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -31,7 +32,9 @@ namespace GubaidullinGlazki
         public decimal MinCostForAgent { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
-    
+
+
+
         public virtual ProductType ProductType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductCostHistory> ProductCostHistory { get; set; }

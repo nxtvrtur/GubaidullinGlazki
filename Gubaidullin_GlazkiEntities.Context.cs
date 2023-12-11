@@ -20,7 +20,7 @@ namespace GubaidullinGlazki
             : base("name=Gubaidullin_GlazkiEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -35,7 +35,7 @@ namespace GubaidullinGlazki
 
             return _context;
         }
-        
+
         public virtual DbSet<Agent> Agent { get; set; }
         public virtual DbSet<AgentPriorityHistory> AgentPriorityHistory { get; set; }
         public virtual DbSet<AgentType> AgentType { get; set; }

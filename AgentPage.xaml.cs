@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -22,7 +24,9 @@ namespace GubaidullinGlazki
             AgentListView.ItemsSource = currentAgents;
             SortCombo.SelectedIndex = 0;
             FilterCombo.SelectedIndex = 0;
+            AgentListView.SelectedItems.Clear();
             UpdateAgents();
+            EditButton.Visibility = Visibility.Hidden;
         }
 
         private void ChangePage(int direction, int? selectedPage)
@@ -105,7 +109,8 @@ namespace GubaidullinGlazki
                                                        || p.Title.ToLower().Contains(TBoxSearch.Text.ToLower())
                                                        || p.Email.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
-                if (FilterCombo.SelectedIndex == 0) currentAgent = currentAgent;
+                if (FilterCombo.SelectedIndex == 0) 
+                    currentAgent = currentAgent;
                 if (FilterCombo.SelectedIndex == 1)
                     currentAgent = currentAgent.Where(p => p.AgentTypeString == "МФО").ToList();
                 if (FilterCombo.SelectedIndex == 2)
@@ -172,7 +177,7 @@ namespace GubaidullinGlazki
 
             private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
             {
-                Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Agent));
+                Manager.MainFrame.Navigate(new AddEditPage((sender as Button)?.DataContext as Agent));
             }
 
             private void AddBtn_OnClick(object sender, RoutedEventArgs e)
@@ -184,11 +189,43 @@ namespace GubaidullinGlazki
             {
                 if (Visibility == Visibility.Visible)
                 {
-                    Gubaidullin_GlazkiEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                Gubaidullin_GlazkiEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                     AgentListView.ItemsSource = Gubaidullin_GlazkiEntities.GetContext().Agent.ToList();
                 }
 
                 UpdateAgents();
+            }
+
+            private void EditPriority_OnClick(object sender, RoutedEventArgs e)
+            {
+                var p = (AgentListView.SelectedItems.Cast<Agent>().Select(selectedItem => selectedItem.Priority)).Prepend(0).Max();
+                var window = new EditPriorityWindow(p);
+                window.ShowDialog();
+                if (string.IsNullOrEmpty(window.Priority.Text))
+                {
+                    return;
+                }
+
+                foreach (Agent selectedItem in AgentListView.SelectedItems)
+                {
+                    selectedItem.Priority = Convert.ToInt32(window.Priority.Text);
+                }
+
+                try
+                {
+                    Gubaidullin_GlazkiEntities.GetContext().SaveChanges();
+                    window.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                UpdateAgents();
+            }
+
+            private void AgentListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+                EditButton.Visibility = AgentListView.SelectedItems.Count > 1 ? Visibility.Visible : Visibility.Hidden;
             }
     }
 }

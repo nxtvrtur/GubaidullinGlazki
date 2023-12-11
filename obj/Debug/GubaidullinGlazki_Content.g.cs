@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gubaidullinmodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gubaidullinmodel.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gubaidullin_glazkientities.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gubaidullin_glazkientities.tt")]
 
 

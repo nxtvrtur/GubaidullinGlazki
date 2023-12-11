@@ -24,3 +24,9 @@ C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\GubaidullinGlazki.csproj.
 C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\GubaidullinGlazki.csproj.CopyComplete
 C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\GubaidullinGlazki.exe
 C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\GubaidullinGlazki.pdb
+C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\EditPriorityWindow.g.cs
+C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\EditPriorityWindow.baml
+C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\AddSalesPage.g.cs
+C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\SalesPage.g.cs
+C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\AddSalesPage.baml
+C:\Users\User\source\repos\GubaidullinGlazki\obj\Debug\SalesPage.baml

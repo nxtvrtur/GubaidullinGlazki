@@ -68,56 +68,77 @@
     <Compile Include="AddEditPage.xaml.cs">
       <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddSalesPage.xaml.cs">
+      <DependentUpon>AddSalesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Agent.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="AgentPage.xaml.cs">
       <DependentUpon>AgentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="AgentPriorityHistory.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="AgentType.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="GubaidullinModel.cs">
+    <Compile Include="EditPriorityWindow.xaml.cs">
+      <DependentUpon>EditPriorityWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gubaidullin_GlazkiEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gubaidullin_GlazkiEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gubaidullin_GlazkiEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gubaidullin_GlazkiEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Material.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="MaterialCountHistory.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="MaterialType.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductCostHistory.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductMaterial.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSale.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductType.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPage.xaml.cs">
+      <DependentUpon>SalesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Shop.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
-      <DependentUpon>GubaidullinModel.tt</DependentUpon>
+      <DependentUpon>Gubaidullin_GlazkiEntities.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml" />
+    <Page Include="AddSalesPage.xaml" />
     <Page Include="AgentPage.xaml" />
+    <Page Include="EditPriorityWindow.xaml" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -126,20 +147,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GubaidullinModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GubaidullinModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GubaidullinModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GubaidullinModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SalesPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -159,12 +171,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="GubaidullinModel.edmx">
+    <EntityDeploy Include="Gubaidullin_GlazkiEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GubaidullinModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Gubaidullin_GlazkiEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="GubaidullinModel.edmx.diagram">
-      <DependentUpon>GubaidullinModel.edmx</DependentUpon>
+    <None Include="Gubaidullin_GlazkiEntities.edmx.diagram">
+      <DependentUpon>Gubaidullin_GlazkiEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -314,19 +326,19 @@
     <Resource Include="Res\Глазки-save.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GubaidullinModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GubaidullinModel.Context.cs</LastGenOutput>
-      <DependentUpon>GubaidullinModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="GubaidullinModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GubaidullinModel.edmx</DependentUpon>
-      <LastGenOutput>GubaidullinModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Gubaidullin_GlazkiEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Gubaidullin_GlazkiEntities.edmx</DependentUpon>
+      <LastGenOutput>Gubaidullin_GlazkiEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Gubaidullin_GlazkiEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Gubaidullin_GlazkiEntities.edmx</DependentUpon>
+      <LastGenOutput>Gubaidullin_GlazkiEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
